@@ -1,6 +1,6 @@
 ---
 date: '2025-05-27T15:17:36-07:00'
-draft: true
+draft: false
 title: 'Porting Printing to Zephyr'
 ---
 # About the Project

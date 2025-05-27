@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><script src="/GSoC-2025/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=GSoC-2025/livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Porting Printing to Zephyr | Porting Printing to Zephyr - GSoC 2025</title>
 <meta name="keywords" content="">
 <meta name="description" content="About the Project
 Printers are a technology that we often think should “just work,” but in reality, there are often many hoops to jump through when dealing with a printer’s drivers. It is a common experience when dealing with printers to struggle to get a document printed when trying every which way on an OS like modern Windows, but then all the problems suddenly disappear when using an Apple device. This is in large part thanks to Apple’s AirPrint, which is the oldest and most widely supported driverless printing protocol. The driverless nature is important as it prevents the issue of having printer drivers that may not be updated to support the user’s current operating system. However, AirPrint is not an open standard, and only Apple operating systems are designed with it in mind. This leads us to IPP Everywhere, a driverless printing protocol that is an open standard, and its pivotal role in the modern open-source printing stack developed by OpenPrinting. This would theoretically allow any operating system that supports the printing stack to print, as long as the printer supports IPP Everywhere.">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/GSoC-2025/posts/intro/">
+<link rel="canonical" href="https://HubertYGuan.github.io/GSoC-2025/posts/intro/">
 <link crossorigin="anonymous" href="/GSoC-2025/assets/css/stylesheet.8fe10233a706bc87f2e08b3cf97b8bd4c0a80f10675a143675d59212121037c0.css" integrity="sha256-j&#43;ECM6cGvIfy4Is8&#43;XuL1MCoDxBnWhQ2ddWSEhIQN8A=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/GSoC-2025/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/GSoC-2025/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/GSoC-2025/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/GSoC-2025/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/GSoC-2025/safari-pinned-tab.svg">
+<link rel="icon" href="https://HubertYGuan.github.io/GSoC-2025/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://HubertYGuan.github.io/GSoC-2025/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://HubertYGuan.github.io/GSoC-2025/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://HubertYGuan.github.io/GSoC-2025/apple-touch-icon.png">
+<link rel="mask-icon" href="https://HubertYGuan.github.io/GSoC-2025/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/GSoC-2025/posts/intro/">
+<link rel="alternate" hreflang="en" href="https://HubertYGuan.github.io/GSoC-2025/posts/intro/">
 <noscript>
     <style>
         #theme-toggle,
@@ -56,7 +56,70 @@ Printers are a technology that we often think should “just work,” but in rea
         }
 
     </style>
-</noscript>
+</noscript><meta property="og:url" content="https://HubertYGuan.github.io/GSoC-2025/posts/intro/">
+  <meta property="og:site_name" content="Porting Printing to Zephyr - GSoC 2025">
+  <meta property="og:title" content="Porting Printing to Zephyr">
+  <meta property="og:description" content="About the Project Printers are a technology that we often think should “just work,” but in reality, there are often many hoops to jump through when dealing with a printer’s drivers. It is a common experience when dealing with printers to struggle to get a document printed when trying every which way on an OS like modern Windows, but then all the problems suddenly disappear when using an Apple device. This is in large part thanks to Apple’s AirPrint, which is the oldest and most widely supported driverless printing protocol. The driverless nature is important as it prevents the issue of having printer drivers that may not be updated to support the user’s current operating system. However, AirPrint is not an open standard, and only Apple operating systems are designed with it in mind. This leads us to IPP Everywhere, a driverless printing protocol that is an open standard, and its pivotal role in the modern open-source printing stack developed by OpenPrinting. This would theoretically allow any operating system that supports the printing stack to print, as long as the printer supports IPP Everywhere.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-05-27T15:17:36-07:00">
+    <meta property="article:modified_time" content="2025-05-27T15:17:36-07:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Porting Printing to Zephyr">
+<meta name="twitter:description" content="About the Project
+Printers are a technology that we often think should “just work,” but in reality, there are often many hoops to jump through when dealing with a printer’s drivers. It is a common experience when dealing with printers to struggle to get a document printed when trying every which way on an OS like modern Windows, but then all the problems suddenly disappear when using an Apple device. This is in large part thanks to Apple’s AirPrint, which is the oldest and most widely supported driverless printing protocol. The driverless nature is important as it prevents the issue of having printer drivers that may not be updated to support the user’s current operating system. However, AirPrint is not an open standard, and only Apple operating systems are designed with it in mind. This leads us to IPP Everywhere, a driverless printing protocol that is an open standard, and its pivotal role in the modern open-source printing stack developed by OpenPrinting. This would theoretically allow any operating system that supports the printing stack to print, as long as the printer supports IPP Everywhere.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://HubertYGuan.github.io/GSoC-2025/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Porting Printing to Zephyr",
+      "item": "https://HubertYGuan.github.io/GSoC-2025/posts/intro/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Porting Printing to Zephyr",
+  "name": "Porting Printing to Zephyr",
+  "description": "About the Project Printers are a technology that we often think should “just work,” but in reality, there are often many hoops to jump through when dealing with a printer’s drivers. It is a common experience when dealing with printers to struggle to get a document printed when trying every which way on an OS like modern Windows, but then all the problems suddenly disappear when using an Apple device. This is in large part thanks to Apple’s AirPrint, which is the oldest and most widely supported driverless printing protocol. The driverless nature is important as it prevents the issue of having printer drivers that may not be updated to support the user’s current operating system. However, AirPrint is not an open standard, and only Apple operating systems are designed with it in mind. This leads us to IPP Everywhere, a driverless printing protocol that is an open standard, and its pivotal role in the modern open-source printing stack developed by OpenPrinting. This would theoretically allow any operating system that supports the printing stack to print, as long as the printer supports IPP Everywhere.\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "About the Project Printers are a technology that we often think should “just work,” but in reality, there are often many hoops to jump through when dealing with a printer’s drivers. It is a common experience when dealing with printers to struggle to get a document printed when trying every which way on an OS like modern Windows, but then all the problems suddenly disappear when using an Apple device. This is in large part thanks to Apple’s AirPrint, which is the oldest and most widely supported driverless printing protocol. The driverless nature is important as it prevents the issue of having printer drivers that may not be updated to support the user’s current operating system. However, AirPrint is not an open standard, and only Apple operating systems are designed with it in mind. This leads us to IPP Everywhere, a driverless printing protocol that is an open standard, and its pivotal role in the modern open-source printing stack developed by OpenPrinting. This would theoretically allow any operating system that supports the printing stack to print, as long as the printer supports IPP Everywhere.\nHowever, IPP Everywhere is not nearly as common as AirPrint, and printers that do not support any wireless printing bring even more complications. This is where our project steps in by bringing driverless wireless printing to all functional printers. Through leveraging OpenPrinting’s printing stack, consisting of CUPS, libcupsfilters, PAPPL, etc., one can already use a single board computer (SBC) such as a Raspberry Pi to run a printing server for such printers. However, the footprint of a Raspberry Pi is quite large, and such a computer is much more expensive than a simple microcontroller. This project aims to reduce the size of machines required for running these driverless printing servers to simpler SBCs and microcontrollers running real-time operating systems, such as Zephyr, in this case. Not only will this allow more legacy printers to become wireless, but this could also aid future wireless printer development by allowing printers to easily come as driverless out of the box.\nProposal, with timeline, that is subject to updates over time: https://docs.google.com/document/d/1cYL6S2JSkzY0ln1w_s3qwpm85-keB9jaVjGSwyPg5NM/edit?usp=sharing\nDesign Diagram https://excalidraw.com/#room=0a35b04c6340f86386ea,xwV6ErRli602L8FTUikm2w\n©️ 2025 Hubert Guan. All rights reserved.\n",
+  "wordCount" : "362",
+  "inLanguage": "en",
+  "datePublished": "2025-05-27T15:17:36-07:00",
+  "dateModified": "2025-05-27T15:17:36-07:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://HubertYGuan.github.io/GSoC-2025/posts/intro/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Porting Printing to Zephyr - GSoC 2025",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://HubertYGuan.github.io/GSoC-2025/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">
@@ -74,7 +137,7 @@ Printers are a technology that we often think should “just work,” but in rea
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/GSoC-2025/" accesskey="h" title="Porting Printing to Zephyr - GSoC 2025 (Alt + H)">Porting Printing to Zephyr - GSoC 2025</a>
+            <a href="https://HubertYGuan.github.io/GSoC-2025/" accesskey="h" title="Porting Printing to Zephyr - GSoC 2025 (Alt + H)">Porting Printing to Zephyr - GSoC 2025</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -109,12 +172,6 @@ Printers are a technology that we often think should “just work,” but in rea
     
     <h1 class="post-title entry-hint-parent">
       Porting Printing to Zephyr
-      <span class="entry-hint" title="Draft">
-        <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" fill="currentColor">
-          <path
-            d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
-        </svg>
-      </span>
     </h1>
     <div class="post-meta"><span title='2025-05-27 15:17:36 -0700 PDT'>May 27, 2025</span>
 
@@ -140,7 +197,7 @@ Printers are a technology that we often think should “just work,” but in rea
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:1313/GSoC-2025/">Porting Printing to Zephyr - GSoC 2025</a></span> · 
+        <span>&copy; 2025 <a href="https://HubertYGuan.github.io/GSoC-2025/">Porting Printing to Zephyr - GSoC 2025</a></span> · 
 
     <span>
         Powered by

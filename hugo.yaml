@@ -1,0 +1,4 @@
+baseURL: https://HubertYGuan.github.io/GSoC-2025/
+languageCode: en-us
+title: Porting Printing to Zephyr - GSoC 2025
+theme: ["PaperMod"]

@@ -3,6 +3,9 @@ date: '2025-05-27T15:17:36-07:00'
 draft: false
 title: 'Porting Printing to Zephyr'
 ---
+
+![OpenPrinting and Zephyr](/images/openprintingzephyr.png#center)
+
 # About the Project
 
 Printers are a technology that we often think should “just work,” but in reality, there are often many hoops to jump through when dealing with a printer’s drivers. It is a common experience when dealing with printers to struggle to get a document printed when trying every which way on an OS like modern Windows, but then all the problems suddenly disappear when using an Apple device. This is in large part thanks to Apple’s AirPrint, which is the oldest and most widely supported driverless printing protocol. The driverless nature is important as it prevents the issue of having printer drivers that may not be updated to support the user’s current operating system. However, AirPrint is not an open standard, and only Apple operating systems are designed with it in mind. This leads us to IPP Everywhere, a driverless printing protocol that is an open standard, and its pivotal role in the modern open-source printing stack developed by OpenPrinting. This would theoretically allow any operating system that supports the printing stack to print, as long as the printer supports IPP Everywhere.
@@ -14,7 +17,5 @@ Proposal, with timeline, that is subject to updates over time: [https://docs.goo
 # Design Diagram
 
 [https://excalidraw.com/#room=0a35b04c6340f86386ea,xwV6ErRli602L8FTUikm2w](https://excalidraw.com/#room=0a35b04c6340f86386ea,xwV6ErRli602L8FTUikm2w)
-
-©️ 2025 Hubert Guan. All rights reserved. 
 
 ---

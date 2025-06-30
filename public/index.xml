@@ -12,8 +12,17 @@
     <generator>Hugo -- 0.147.6</generator>
     <language>en-us</language>
     <copyright>Hubert Guan, OpenPrinting, Zephyr</copyright>
-    <lastBuildDate>Sat, 21 Jun 2025 18:05:27 -0700</lastBuildDate>
+    <lastBuildDate>Sun, 29 Jun 2025 21:40:07 -0700</lastBuildDate>
     <atom:link href="https://HubertYGuan.github.io/GSoC-2025/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Week 2: PDFio and zlib Continued</title>
+      <link>https://HubertYGuan.github.io/GSoC-2025/posts/week2/</link>
+      <pubDate>Sun, 29 Jun 2025 21:40:07 -0700</pubDate>
+      <guid>https://HubertYGuan.github.io/GSoC-2025/posts/week2/</guid>
+      <description>&lt;p&gt;This week was mainly a continuation of my work during week 1. I continued work on zlib by conducting more rigorous testing, covering the relevant tests within the default CMakeLists. Overall, I think that zlib is mostly functional at the current state and should provide general compression and decompression functionality.&lt;/p&gt;
+&lt;h1 id=&#34;notes-on-zlib&#34;&gt;Notes on zlib&lt;/h1&gt;
+&lt;p&gt;There are still some things to keep in mind on the current state of zlib; first of which is building the test application, especially since I have to use a file system like littlefs. In &lt;code&gt;gzlib.c&lt;/code&gt; and related source files for “gz” prefixed functions, file i/o functionality is required, and I figured that littlefs would be a good fit since it is designed for use in embedded applications. However, it seems that some platforms, such as my &lt;code&gt;native_sim&lt;/code&gt; and &lt;code&gt;qemu_riscv64/32&lt;/code&gt;, struggle with building the application with littlefs or with interacting with the filesystem. I have found that real hardware (i.e., the ESP32) works the best for building and running the application. However, the application still fails two coverage tests (&lt;code&gt;cover_wrap&lt;/code&gt; and &lt;code&gt;cover_back&lt;/code&gt;) in the provided CMake tests. Therefore, I will have to look into OpenOCD so I can get a debugger running. On the other hand, I’m able to pass all the tests not involving file i/o on native_sim, likely since there are differences between the C libraries on &lt;code&gt;native_sim&lt;/code&gt; and other platforms (e.g., I think I am able to include header files on my system but not in the Zephyr libc). Another factor to keep in mind is that I also decreased the parameters for max LZ77 window bits and default memory level to avoid a heap overflow on my ESP32. Lastly, I have a few remarks on the Kconfig option &lt;code&gt;CONFIG_POSIX_API&lt;/code&gt;. Although this &lt;a href=&#34;https://docs.zephyrproject.org/latest/services/portability/posix/overview/index.html&#34;&gt;page&lt;/a&gt; states that the option should not be used for new Zephyr applications, the truth is that &lt;code&gt;unistd.h&lt;/code&gt; still uses a &lt;code&gt;#ifdef CONFIG_POSIX_API&lt;/code&gt; block around some important functions like &lt;code&gt;read()&lt;/code&gt;, &lt;code&gt;write()&lt;/code&gt;, etc. Therefore, I have set the option as a dependency for zlib.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Week 1: PDFio and zlib</title>
       <link>https://HubertYGuan.github.io/GSoC-2025/posts/week1/</link>

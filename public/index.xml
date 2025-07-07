@@ -12,8 +12,16 @@
     <generator>Hugo -- 0.147.6</generator>
     <language>en-us</language>
     <copyright>Hubert Guan, OpenPrinting, Zephyr</copyright>
-    <lastBuildDate>Sun, 29 Jun 2025 21:40:07 -0700</lastBuildDate>
+    <lastBuildDate>Sun, 06 Jul 2025 20:17:23 -0700</lastBuildDate>
     <atom:link href="https://HubertYGuan.github.io/GSoC-2025/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Week 3: PDFio and zlib Updates</title>
+      <link>https://HubertYGuan.github.io/GSoC-2025/posts/week3/</link>
+      <pubDate>Sun, 06 Jul 2025 20:17:23 -0700</pubDate>
+      <guid>https://HubertYGuan.github.io/GSoC-2025/posts/week3/</guid>
+      <description>&lt;p&gt;This week marks the point where zlib and PDFio are wrapped up for now. This update is fairly short since there has not been a lot of new stuff going on this week, since most of the work has been with testing, and I celebrated Independence Day last Friday.&lt;/p&gt;
+&lt;p&gt;I can now proudly say that zlib passes the provided &lt;code&gt;example&lt;/code&gt; and &lt;code&gt;infcover&lt;/code&gt; tests at least on the ESP32. Luckily, I did not have to go digging around in GDB very much since the problems seemed to just be in the compile options and library choice. Now that I have enforced the &lt;code&gt;_POSIX_C_SOURCE&lt;/code&gt; parameter and switched to newlib, things have been going fine so far.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Week 2: PDFio and zlib Continued</title>
       <link>https://HubertYGuan.github.io/GSoC-2025/posts/week2/</link>

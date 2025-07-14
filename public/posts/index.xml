@@ -12,8 +12,17 @@
     <generator>Hugo -- 0.147.6</generator>
     <language>en-us</language>
     <copyright>Hubert Guan, OpenPrinting, Zephyr</copyright>
-    <lastBuildDate>Sun, 06 Jul 2025 20:17:23 -0700</lastBuildDate>
+    <lastBuildDate>Mon, 14 Jul 2025 11:52:45 -0700</lastBuildDate>
     <atom:link href="https://HubertYGuan.github.io/GSoC-2025/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Week 4: libcups and Dependencies</title>
+      <link>https://HubertYGuan.github.io/GSoC-2025/posts/week4/</link>
+      <pubDate>Mon, 14 Jul 2025 11:52:45 -0700</pubDate>
+      <guid>https://HubertYGuan.github.io/GSoC-2025/posts/week4/</guid>
+      <description>&lt;p&gt;I want to start by saying that porting libcups is significantly more complex than porting zlib or PDFio, and I was definitely wrong in saying that I could port it quickly. Although setting up the build scripts and environment is relatively simple, like with zlib and PDFio, I also have to make significant additions and changes to the source code in multiple libraries.&lt;/p&gt;
+&lt;h1 id=&#34;mbed-tls&#34;&gt;Mbed TLS&lt;/h1&gt;
+&lt;p&gt;The first challenge comes in the form of Zephyr’s TLS library, Mbed TLS. Since the design methodologies of OpenSSL, GNU TLS, and Mbed TLS differ, I first had to modify Mbed TLS to expose previously static functions (mainly for &lt;code&gt;cupsAreCredentialsValidForName&lt;/code&gt;). Since the contributors didn’t want users to have access to functions like &lt;code&gt;x509_crt_verify_name&lt;/code&gt; that are practically needed to implement some of the libcups functions (maybe due to security concerns), this sort of modification is unofficial and can be quite murky.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Week 3: PDFio and zlib Updates</title>
       <link>https://HubertYGuan.github.io/GSoC-2025/posts/week3/</link>

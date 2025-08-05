@@ -12,8 +12,15 @@
     <generator>Hugo -- 0.147.6</generator>
     <language>en-us</language>
     <copyright>Hubert Guan, OpenPrinting, Zephyr</copyright>
-    <lastBuildDate>Mon, 28 Jul 2025 21:10:09 -0700</lastBuildDate>
+    <lastBuildDate>Mon, 04 Aug 2025 14:08:05 -0700</lastBuildDate>
     <atom:link href="https://HubertYGuan.github.io/GSoC-2025/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Week 7: Midterm Update</title>
+      <link>https://HubertYGuan.github.io/GSoC-2025/posts/week7/</link>
+      <pubDate>Mon, 04 Aug 2025 14:08:05 -0700</pubDate>
+      <guid>https://HubertYGuan.github.io/GSoC-2025/posts/week7/</guid>
+      <description>&lt;p&gt;Now that midterm evaluations have come out, it is time to reflect on my experiences and the progress that I’ve made. Overall, I am proud of the progress that I have made, but I know that there is a lot more work left to do. For this week, I have been able to get a test suite running for libcups. However, there is a lot more testing to be done since libcups is a lot more complex and less self-contained than other libraries like zlib or pdfio.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Week 6: More Progress on libcups</title>
       <link>https://HubertYGuan.github.io/GSoC-2025/posts/week6/</link>

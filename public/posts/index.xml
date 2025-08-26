@@ -12,8 +12,15 @@
     <generator>Hugo -- 0.147.6</generator>
     <language>en-us</language>
     <copyright>Hubert Guan, OpenPrinting, Zephyr</copyright>
-    <lastBuildDate>Mon, 18 Aug 2025 18:35:30 -0700</lastBuildDate>
+    <lastBuildDate>Mon, 25 Aug 2025 16:42:28 -0700</lastBuildDate>
     <atom:link href="https://HubertYGuan.github.io/GSoC-2025/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Week 10: DNS-SD and ippeveprinter</title>
+      <link>https://HubertYGuan.github.io/GSoC-2025/posts/week10/</link>
+      <pubDate>Mon, 25 Aug 2025 16:42:28 -0700</pubDate>
+      <guid>https://HubertYGuan.github.io/GSoC-2025/posts/week10/</guid>
+      <description>&lt;p&gt;This week, I put the JTAG debugging and the rest of the libcups tests on hold in favor of getting ippeveprinter (a minimal print server example) up and running on Zephyr. Generally, what I have been seeing myself doing through this process and stage of development is removing all of the parts that would not be feasible to support right now and focusing on the actual application rather than all of the tests for libraries. This is because it’s become clear to me that time is going to be scarce over the next weeks as I have finals for my summer classes and then a significantly more difficult Fall term after that.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Week 9: Debugging and mDNS Responder</title>
       <link>https://HubertYGuan.github.io/GSoC-2025/posts/week9/</link>

@@ -12,8 +12,17 @@
     <generator>Hugo -- 0.147.6</generator>
     <language>en-us</language>
     <copyright>Hubert Guan, OpenPrinting, Zephyr</copyright>
-    <lastBuildDate>Mon, 25 Aug 2025 16:42:28 -0700</lastBuildDate>
+    <lastBuildDate>Mon, 01 Sep 2025 18:56:48 -0700</lastBuildDate>
     <atom:link href="https://HubertYGuan.github.io/GSoC-2025/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Week 11: ippeveprinter Continued</title>
+      <link>https://HubertYGuan.github.io/GSoC-2025/posts/week11/</link>
+      <pubDate>Mon, 01 Sep 2025 18:56:48 -0700</pubDate>
+      <guid>https://HubertYGuan.github.io/GSoC-2025/posts/week11/</guid>
+      <description>&lt;p&gt;This week was mainly spent trying to figure out all of the small issues in trying to translate ippeveprinter and libcups functionality over from Linux. I’ve learned more about how Zephyr handles concepts like pthreads and how they can be a lot more difficult to deal with than on Linux. I also recently received my ESP32s3 board, so I have also been testing the application there as well.&lt;/p&gt;
+&lt;h1 id=&#34;ippeveprinter-update&#34;&gt;ippeveprinter Update&lt;/h1&gt;
+&lt;p&gt;Luckily, it seems that using the previously mentioned syscalls like &lt;code&gt;pipe&lt;/code&gt;, &lt;code&gt;dup&lt;/code&gt;, and &lt;code&gt;execve&lt;/code&gt; are not entirely necessary for the functioning of ippeveprinter since those are only used to execute user-defined bash commands for incoming print jobs. However, something else has become the main problem with implementing the rest of ippeveprinter: pthreads. Since libcups uses pthread keys to manage its globals, I’ve had issues every time I’ve tried to initiate and store globals. Mainly, &lt;code&gt;pthread_setspecific&lt;/code&gt; will return &lt;code&gt;EINVAL&lt;/code&gt; since &lt;code&gt;to_posix_thread(pthread_self())&lt;/code&gt; will fail. Inside of &lt;code&gt;pthread_self&lt;/code&gt;:&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Week 10: DNS-SD and ippeveprinter</title>
       <link>https://HubertYGuan.github.io/GSoC-2025/posts/week10/</link>

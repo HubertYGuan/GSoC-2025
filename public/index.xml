@@ -12,8 +12,17 @@
     <generator>Hugo -- 0.147.6</generator>
     <language>en-us</language>
     <copyright>Hubert Guan, OpenPrinting, Zephyr</copyright>
-    <lastBuildDate>Mon, 01 Sep 2025 18:56:48 -0700</lastBuildDate>
+    <lastBuildDate>Mon, 08 Sep 2025 23:41:54 -0700</lastBuildDate>
     <atom:link href="https://HubertYGuan.github.io/GSoC-2025/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Week 12: More Debugging</title>
+      <link>https://HubertYGuan.github.io/GSoC-2025/posts/week12/</link>
+      <pubDate>Mon, 08 Sep 2025 23:41:54 -0700</pubDate>
+      <guid>https://HubertYGuan.github.io/GSoC-2025/posts/week12/</guid>
+      <description>&lt;p&gt;Although I was not able to work very much this week, I was able to delve further into running ippeveprinter, and I also have an update on JTAG debugging. I was able to resolve the previous issues about pthreads for now, as well as most of my previous issues with debugging, but there is now a whole new suite of issues for me to deal with.&lt;/p&gt;
+&lt;h1 id=&#34;ippeveprinter&#34;&gt;ippeveprinter&lt;/h1&gt;
+&lt;p&gt;After running ippeveprinter in a pthread, I noticed that I would either get stuck somewhere spinning indefinitely or get the following store-prohibited error:&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Week 11: ippeveprinter Continued</title>
       <link>https://HubertYGuan.github.io/GSoC-2025/posts/week11/</link>

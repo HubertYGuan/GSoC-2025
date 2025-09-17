@@ -12,8 +12,16 @@
     <generator>Hugo -- 0.147.6</generator>
     <language>en-us</language>
     <copyright>Hubert Guan, OpenPrinting, Zephyr</copyright>
-    <lastBuildDate>Mon, 08 Sep 2025 23:41:54 -0700</lastBuildDate>
+    <lastBuildDate>Tue, 16 Sep 2025 22:16:36 -0700</lastBuildDate>
     <atom:link href="https://HubertYGuan.github.io/GSoC-2025/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Week 13: Short ippeveprinter Update</title>
+      <link>https://HubertYGuan.github.io/GSoC-2025/posts/week13/</link>
+      <pubDate>Tue, 16 Sep 2025 22:16:36 -0700</pubDate>
+      <guid>https://HubertYGuan.github.io/GSoC-2025/posts/week13/</guid>
+      <description>&lt;p&gt;As I alluded to in my previous post, I did not have much time to work on ippeveprinter this week, but I did manage to figure out what was wrong before. Now, mostly DNS-SD and networking work remains to be done.&lt;/p&gt;
+&lt;p&gt;As for the previous issue I faced, I figured out that it was caused by a lack of available stack memory for &lt;code&gt;ippeve_main&lt;/code&gt; and that I actually had to &lt;code&gt;malloc&lt;/code&gt; the stack myself since the default &lt;code&gt;pthread_attr&lt;/code&gt; allocation method conflicts with the net management allocations for some reason (if I allocate one, the other will fail to allocate unless I set the stack size low enough).&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Week 12: More Debugging</title>
       <link>https://HubertYGuan.github.io/GSoC-2025/posts/week12/</link>

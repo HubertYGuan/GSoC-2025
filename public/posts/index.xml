@@ -12,8 +12,16 @@
     <generator>Hugo -- 0.147.6</generator>
     <language>en-us</language>
     <copyright>Hubert Guan, OpenPrinting, Zephyr</copyright>
-    <lastBuildDate>Tue, 16 Sep 2025 22:16:36 -0700</lastBuildDate>
+    <lastBuildDate>Tue, 23 Sep 2025 16:07:55 -0700</lastBuildDate>
     <atom:link href="https://HubertYGuan.github.io/GSoC-2025/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Week 14: ippeveprinter Configuration, DNS-SD, and HTTP</title>
+      <link>https://HubertYGuan.github.io/GSoC-2025/posts/week14/</link>
+      <pubDate>Tue, 23 Sep 2025 16:07:55 -0700</pubDate>
+      <guid>https://HubertYGuan.github.io/GSoC-2025/posts/week14/</guid>
+      <description>&lt;p&gt;I had more time this week to work on and debug the DNS-SD services and functionality of ippeveprinter. I was able to figure out how to get ippeveprinter recognized as a printer by CUPS, but I’ve also had a lot more issues with processing jobs.&lt;/p&gt;
+&lt;p&gt;First, I noticed that I have to load a &lt;code&gt;test.conf&lt;/code&gt; file, or else seemingly every job will fail when running on my local machine. It turns out that the &lt;code&gt;load_ippserver_attributes&lt;/code&gt; is very memory-intensive, and I was only able to get it to work after increasing a bunch of stack sizes in the kconfig (see &lt;a href=&#34;https://github.com/HubertYGuan/zephyr-example/blob/main/prj.conf&#34;&gt;source code&lt;/a&gt;). This means that I have only about 5% of my DRAM available for the heap, and I am also unsure if my pthread stacks are large enough to handle the HTTP functions either.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Week 13: Short ippeveprinter Update</title>
       <link>https://HubertYGuan.github.io/GSoC-2025/posts/week13/</link>

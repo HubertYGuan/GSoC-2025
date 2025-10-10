@@ -12,8 +12,22 @@
     <generator>Hugo -- 0.147.6</generator>
     <language>en-us</language>
     <copyright>Hubert Guan, OpenPrinting, Zephyr</copyright>
-    <lastBuildDate>Tue, 23 Sep 2025 16:07:55 -0700</lastBuildDate>
+    <lastBuildDate>Fri, 10 Oct 2025 00:26:46 -0700</lastBuildDate>
     <atom:link href="https://HubertYGuan.github.io/GSoC-2025/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Week 16: ippeveprinter Woes and Updated Plans</title>
+      <link>https://HubertYGuan.github.io/GSoC-2025/posts/week16/</link>
+      <pubDate>Fri, 10 Oct 2025 00:26:46 -0700</pubDate>
+      <guid>https://HubertYGuan.github.io/GSoC-2025/posts/week16/</guid>
+      <description>&lt;p&gt;From what I could gather this week when working on ippeveprinter, it is likely not going to be running on Zephyr any time soon. The reality is that ippeveprinter is 8k lines of code without some kind of modular testbench and that it is clearly not written for embedded systems (besides embedded Linux devices, which have traits of traditional computer systems). It has also become a debugging nightmare to get through since logs are not clear as to what exactly is going wrong and there is not much comparison with regular ippeveprinter on Linux since most of the logs disappear if nothing goes wrong. Furthermore, step-through debugging is not the best when testing a real-time connection HTTP connection that can timeout. Lastly, it takes a lot of overhead time just to reset my testing setup since &lt;code&gt;ippfind&lt;/code&gt; can often have trouble finding ippeveprinter.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Week 15: More pthread and Memory Adventures in ippeveprinter</title>
+      <link>https://HubertYGuan.github.io/GSoC-2025/posts/week15/</link>
+      <pubDate>Thu, 02 Oct 2025 00:47:49 -0700</pubDate>
+      <guid>https://HubertYGuan.github.io/GSoC-2025/posts/week15/</guid>
+      <description>&lt;p&gt;This week has definitely had many ups and downs in terms of this project and my work now that I am officially starting my Fall quarter. Surprisingly (or unsurprisingly due to reasons I will get into), I have not had that much time to work on this project despite classes being basically nonexistent in terms of assignments (with the exception of the embedded systems course ECE 153a that makes me go into Vivado even before the first lecture). The main thing that has been taking up my time is working on a new initiative with the ACM student chapter at UCSB, which involves managing communications with much of the faculty from two departments and many meetings for event planning.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Week 14: ippeveprinter Configuration, DNS-SD, and HTTP</title>
       <link>https://HubertYGuan.github.io/GSoC-2025/posts/week14/</link>

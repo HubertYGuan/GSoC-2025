@@ -12,8 +12,15 @@
     <generator>Hugo -- 0.147.6</generator>
     <language>en-us</language>
     <copyright>Hubert Guan, OpenPrinting, Zephyr</copyright>
-    <lastBuildDate>Mon, 20 Oct 2025 01:35:03 -0700</lastBuildDate>
+    <lastBuildDate>Wed, 29 Oct 2025 02:10:59 -0700</lastBuildDate>
     <atom:link href="https://HubertYGuan.github.io/GSoC-2025/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Week 19: Wrapping up libcups Testing For Now</title>
+      <link>https://HubertYGuan.github.io/GSoC-2025/posts/week19/</link>
+      <pubDate>Wed, 29 Oct 2025 02:10:59 -0700</pubDate>
+      <guid>https://HubertYGuan.github.io/GSoC-2025/posts/week19/</guid>
+      <description>&lt;p&gt;This is a short status update on testing for libcups and PAPPL for the week (I can’t write that much since it is currently midterm season for me). Firstly, I have implemented the semaphores for &lt;code&gt;sys_heap&lt;/code&gt; functions that I mentioned earlier. However, I have not extensively tested the new multithreaded &lt;code&gt;sys_heap&lt;/code&gt; behavior with these semaphores. It seems like there are no current conflicts with the WiFi thread running in the external heap and the main thread interacting with the external heap at least.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Week 17/18: Testing with the New Memory Management Scheme</title>
       <link>https://HubertYGuan.github.io/GSoC-2025/posts/weeks17-18/</link>

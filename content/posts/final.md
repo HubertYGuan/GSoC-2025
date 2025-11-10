@@ -28,7 +28,7 @@ Here is a quick run-down of everything that had to be changed or left out in thi
 * `dest.c` and related dest files are removed.  
 * Mbedtls replaces gnutls and openssl. However, the mbedtls functionality has not been tested much as it has not been a main priority for the print server.  
 * DNS-SD functionality is restricted strictly to Zephyr’s supported advertising capability. Furthermore, functions such as `cupsDNSSDServiceAdd` do not add DNS-SD services since these services must be added at compile time according to Zephyr’s API.  
-* Use of the file system for config files and similar things is mostly unsupported, but the file i/o operations should still function relatively fine.  
+* Use of the file system for config files and similar things is mostly unsupported, but the file i/o operations should still function relatively fine. There are some issues, however, with `ippFileRead` on large files.
 * All memory allocation is moved to the external heap region defined in the Zephyr shared multi-heap when Espressif PSRAM support or similar external heap config options are enabled.
 
 Overall, libcups is operational in terms of the main tests of array, clock, hash, language, HTTP, and IPP.
@@ -43,7 +43,7 @@ I have also had to make some changes to the Zephyr kernel in order to properly r
 
 The actual print server frameworks/applications like PAPPL are currently very much a work-in-progress. I have created a Zephyr module and test-application for running the PAPPL system that do compile. However, there is a lot more testing that needs to be done to address errors in PAPPL.
 
-Another avenue for print server applications to go down is ippeveprinter, which emulates a print server and is mainly used to test communication over IPP. I have ran this and had success with DNS-SD advertisement but processing an IPP message still remains to be a challenge.
+Another avenue for print server applications to go down is ippeveprinter, which emulates a print server and is mainly used to test communication over IPP. I have ran this and had success with DNS-SD advertisement but processing an IPP message still remains to be a challenge. I have also recently (as of the time of writing) done some more testing with ippeveprinter and struggled with processing `test.conf`, but succeeded with smaller config files. 
 
 # Upstreaming
 
